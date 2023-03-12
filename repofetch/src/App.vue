@@ -1,8 +1,8 @@
 <template>
   <div>
     <Pagination  
-      :totalPages="10"
-      :perPage="10"
+      :totalPages="6"
+      :perPage="5"
       :currentPage="currentPage"
       @pagechanged="onPageChange"/>
   </div>
