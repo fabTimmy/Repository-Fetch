@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Repo from '../Repo.vue';
+import Repo from '../components/Repo.vue';
     export default {
         name: 'homePage',
         components: {
