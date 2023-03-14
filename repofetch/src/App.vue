@@ -1,31 +1,25 @@
 <template>
   <div>
-    <Pagination  
-      :totalPages="6"
-      :perPage="5"
-      :currentPage="currentPage"
-      @pagechanged="onPageChange"/>
+  <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Pagination from './components/Pagination.vue';
 export default {
   name: 'App',
   components: {
-    Pagination,
   },
   data () {
     return {
       currentPage: 1,
     };
   },
-  methods: {
-    onPageChange(page) {
-      console.log(page)
-      this.currentPage = page;
-    }
-  }
+  // methods: {
+  //   onPageChange(page) {
+  //     console.log(page)
+  //     this.currentPage = page;
+  //   }
+  // }
 }
 </script>
 
