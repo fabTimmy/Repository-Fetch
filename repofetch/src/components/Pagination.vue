@@ -15,10 +15,10 @@
       <li class="pagination-item">
         <button
           type="button"
-          @click="onClickPreviousPage"
+          @click="onClickPrevPage"
         :disabled="isInFirstPage"
         >
-          Previous
+          Prev
         </button>
       </li>
   
@@ -123,7 +123,7 @@ export default {
     onClickFirstPage() {
         this.$emit('pagechanged', 1);
     },
-    onClickPreviousPage() {
+    onClickPrevPage() {
         this.$emit('pagechanged', this.currentPage - 1);
     },
     onClickPage(page) {
@@ -147,13 +147,18 @@ export default {
 .pagination {
   list-style-type: none;
 }
+button{
+  padding: 0.6rem;
+  margin: 0.1rem;
+
+}
 
 .pagination-item {
   display: inline-block;
 }
 
 .active {
-  background-color: #4AAE9B;
-  color: #ffffff;
+  background-color: #1c64ac;
+  color: #fff;
 }
 </style>

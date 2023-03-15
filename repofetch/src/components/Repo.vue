@@ -7,7 +7,6 @@
         </caption>
       </marquee>
       <div class="about">
-        <router-link to="/about">About us</router-link>
       </div>
     </nav>
     <table :class="table">
@@ -21,10 +20,9 @@
         <td>{{ repo.id }}</td>
         <td>{{ repo.name }}</td>
         <td>
-          <router-link :to="`/about/${repo.id}`">
+        <router-link :to="`/singleRepo/${repo.id}`">
             {{ repo.html_url }}
-          </router-link>
-        </td>
+          </router-link></td>
         <td>{{ repo.language }}</td>
       </tr>
     </table>

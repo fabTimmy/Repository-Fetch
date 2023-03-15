@@ -14,12 +14,6 @@ export default {
       currentPage: 1,
     };
   },
-  // methods: {
-  //   onPageChange(page) {
-  //     console.log(page)
-  //     this.currentPage = page;
-  //   }
-  // }
 }
 </script>
 

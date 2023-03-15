@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import {createRouter, createWebHistory} from 'vue-router'
-import About from './Views/About.vue'
+import SingleRepo from './Views/SingleRepo.vue'
 import Home from './Views/Home.vue'
 import NotFound from './Views/NotFound.vue'
 
@@ -13,15 +13,11 @@ const router = createRouter({
         component: Home,
     },
     {
-        path: '/about',
-        name: 'About',
-        component: About,
+        path: '/singleRepo',
+        name: 'SingleRepo',
+        component: SingleRepo,
         children: [
-            {
-                path: ':id',
-                // component: RepoData,
-                props: true
-            },
+            {path: '/singleRepo/:id', component: () => import('./components/SingleRepoData.vue')},
         ]
     },
     {
