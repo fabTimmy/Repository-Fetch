@@ -5,9 +5,9 @@
         <th>ID</th>
         <th>Name</th>
       </tr>
-      <tr v-for="repo in repos" :key="repo.id">
-        <td>{{ repo.id }}</td>
-        <td>{{ repo.name }}</td>
+      <tr>
+        <td>{{ repos.id }}</td>
+        <td>{{ repos.name }}</td>
       </tr>
       <h3>{{ $route.params.id }}</h3>
       <RouterLink to="/">Go Home</RouterLink>
@@ -25,22 +25,23 @@ import axios from 'axios';
                 repos: {},
             };
         },
-        // methods: {
-        //         getRequest() {
-        //         },
-        //     },
-        //     watch: {
-        //         function(){
-        //             this.getRequest()
-        //         }
-        //     },
-            created() {
-                axios.get(`(https://api.github.com/users/fabTimmy/repos?${this.id})`)
-                .then((data) => {
-                    console.log(data.data);
-                    this.repos = data.data[this.id];
+        methods: {
+                makeRequest() {
+                    axios.get(`(https://api.github.com/users/fabTimmy/repos?${this.id})`)
+                    .then((data) => {
+                        console.log(data.data);
+                        this.repos = data.data[this.id];
+                    }
+                    )
+                },
+            },
+            watch: {
+                function(){
+                    this.makeRequest()
                 }
-                )
+            },
+            created() {
+                this.makeRequest()
         }
         }
 </script>
