@@ -45,7 +45,6 @@ import axios from 'axios';
 #single-repo-data{
     display: flex;
     flex-direction: column;
-    /* background-color: #000; */
     justify-content: center;
     align-items: center;
     height: 100vh;
