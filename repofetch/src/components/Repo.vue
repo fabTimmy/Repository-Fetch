@@ -10,12 +10,15 @@
       </div>
     </nav>
     <table :class="table">
+    <thead>
       <tr>
         <th>ID</th>
         <th>Name</th>
         <th>URL</th>
         <th>Language</th>
       </tr>
+    </thead>
+    <tbody>
       <tr v-for="repo in repos" :key="repo.id">
         <td>{{ repo.id }}</td>
         <td>{{ repo.name }}</td>
@@ -25,6 +28,7 @@
           </router-link></td>
         <td>{{ repo.language }}</td>
       </tr>
+    </tbody>
     </table>
     <Pagination
       :totalPages="5"
@@ -118,6 +122,7 @@ caption {
   font-weight: 600;
   font-size: 1.7rem;
   white-space: nowrap;
+  color: #fff;
 }
 .about {
   margin-right: 3rem;

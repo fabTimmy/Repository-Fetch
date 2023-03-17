@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
   <router-view></router-view>
   </div>
 </template>
@@ -23,7 +23,15 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #2c3e50b0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
 }
 </style>
