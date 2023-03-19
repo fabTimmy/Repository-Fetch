@@ -12,7 +12,6 @@
         <td>{{ repos.language }}</td>
       </tr>
     </table>
-      <h3>{{ $route.params.id }}</h3>
       <RouterLink to="/"><button>Go Home</button></RouterLink>
     </div> 
 </template>
