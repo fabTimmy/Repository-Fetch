@@ -1,8 +1,8 @@
 <template>
-    <div id="single-repo-data"> 
+    <div name="single-repo-data"> 
     <table>
         <tr>
-        <th>ID</th>
+        <th>id</th>
         <th>Name</th>
         <th>Language</th>
       </tr>
@@ -20,18 +20,20 @@
 import axios from 'axios';
 
     export default {
-        data() {
+        data(){
             return {
-                id: this.$route.params.id,
+                name: this.$route.params.id,
                 repos: {},
             };
         },
-        mounted() {
-                    axios.get(`(https://api.github.com/users/fabTimmy/repos${this.id})`)
+        created() {
+          console.log(this.$route.params)
+          axios.get(`https://api.github.com/repos/fabTimmy/${this.name}`)
                     .then(repo => {
-                        this.repos = repo.data.filter( repos => {
-                            return repos.id === this.id
-                        })
+                        this.repos = {
+                            id: repo.data.id,
+                            name: repo.data.name,
+                            language: repo.data.language,}
                     })
                     .catch((error) => {
                         console.log(error);
@@ -52,9 +54,9 @@ import axios from 'axios';
     
 }
 table{
-    border: 1px solid #ccc;
+    border: 1px solname #ccc;
     border-collapse: collapse;
-    min-width: 50vw;
+    min-wnameth: 50vw;
     margin: auto;
     border-radius: 0.7rem;
 }
@@ -67,7 +69,7 @@ th {
 }
 th,
 td {
-  border: 1px solid #ccc;
+  border: 1px solname #ccc;
   padding: 0.7rem 1.4rem;
 }
 h3{

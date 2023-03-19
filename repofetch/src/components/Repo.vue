@@ -23,7 +23,7 @@
         <td>{{ repo.id }}</td>
         <td>{{ repo.name }}</td>
         <td>
-        <router-link :to="`/singleRepo/${repo.id}`">
+        <router-link :to="`/singleRepo/${repo.name}`">
             {{ repo.html_url }}
           </router-link></td>
         <!-- <td>{{ repo.language }}</td> -->
