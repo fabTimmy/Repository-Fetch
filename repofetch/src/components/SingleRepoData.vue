@@ -13,7 +13,7 @@
       </tr>
     </table>
       <h3>{{ $route.params.id }}</h3>
-      <RouterLink to="/">Go Home</RouterLink>
+      <RouterLink to="/"><button>Go Home</button></RouterLink>
     </div> 
 </template>
 
