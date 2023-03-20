@@ -2,7 +2,7 @@
     <div name="single-repo-data"> 
     <table>
         <tr>
-        <th>id</th>
+        <th>ID</th>
         <th>Name</th>
         <th>Language</th>
       </tr>
@@ -36,7 +36,7 @@ import axios from 'axios';
                         this.repos = {
                             id: repo.data.id,
                             name: repo.data.name,
-                            language: repo.data.language,}
+                            language: repo.data.language}
                     })
                     .catch((error) => {
                         console.log(error);
@@ -77,7 +77,25 @@ table{
   border: 1px solid #ccc;
   padding: 0.7rem 1.4rem;
 }
-h3{
-
+button{
+    background: #1c64ac;
+    color: #fff;
+    /* font-weight: 600; */
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 0.7rem;
+    padding: 0.7rem 1.4rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+button:hover{
+    background: #1c64acde;
+    color: #fff;
+    font-weight: 300;
+    font-size: 1.1rem;
+    padding: 0.7rem 1.4rem;
+    transition: 1s ease all;
+    opacity: 0.8;
 }
 </style>
