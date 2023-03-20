@@ -95,13 +95,16 @@ export default {
         if (this.currentPage === this.totalPages) {
             return this.totalPages - this.maxVisibleButtons;
         }
-        return this.currentPage - 1;
+        if(this.currentPage > 3){
+          return this.pages[0].name;
+        }
+        return  1;
     },
     pages() {
         const range = [];
 
         for(
-            let i = this.startPage;
+            let i = this.startPage ;
             i <= Math.min(this.startPage + this.maxVisibleButtons - 1, this.totalPages);
             i++
         ) {
@@ -131,6 +134,9 @@ export default {
     },
     onClickNextPage() {
         this.$emit('pagechanged', this.currentPage + 1);
+        if(this.currentPage > 2){
+          this.startPage = this.currentPage - 2;
+        }
     },
     onClickLastPage() {
         this.$emit('pagechanged', this.totalPages);
