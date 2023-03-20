@@ -12,6 +12,9 @@
         <td>{{ repos.language }}</td>
       </tr>
     </table>
+    <br>
+    <br>
+    <br>
       <RouterLink to="/"><button>Go Home</button></RouterLink>
     </div> 
 </template>
@@ -54,22 +57,24 @@ import axios from 'axios';
     
 }
 table{
-    border: 1px solname #ccc;
+    border: 1px solid #ccc;
+    color: #666;
     border-collapse: collapse;
-    min-wnameth: 50vw;
+    min-width: 50vw;
     margin: auto;
     border-radius: 0.7rem;
-}
-th {
-  background: #1c64ac;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.2rem;
-  text-align: center;
-}
-th,
-td {
-  border: 1px solname #ccc;
+    background: rgb(245, 248, 248);
+  }
+  th {
+    background: #1c64ac;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  th,
+  td {
+  border: 1px solid #ccc;
   padding: 0.7rem 1.4rem;
 }
 h3{
